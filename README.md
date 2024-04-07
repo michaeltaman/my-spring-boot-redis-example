@@ -20,7 +20,7 @@ It can be embedded in Java applications or run in client-server mode.
 
 The h2 database will contain the data:
 
-![Example Image](./images/example.png)
+![Example Image](./images/example1.png)
 
 
 # Run Docker Desktop

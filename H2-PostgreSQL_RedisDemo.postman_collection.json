@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "39cc6c12-73de-4cd0-bcbf-f989184c7a14",
+		"name": "H2-PostgreSQL_RedisDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8194928",
+		"_collection_link": "https://dark-flare-401143.postman.co/workspace/Afcon_Workspace_1~bfea140c-6d47-4871-8a7d-f1ffffef3654/collection/8194928-39cc6c12-73de-4cd0-bcbf-f989184c7a14?action=share&source=collection_link&creator=8194928"
+	},
+	"item": [
+		{
+			"name": "getAllTutorials",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tutorial Title\",\r\n    \"description\": \"Tutorial Description\",\r\n    \"published\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTutorial",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tutorial Title\",\r\n    \"description\": \"Tutorial Description\",\r\n    \"published\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTutorialById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTutorialByPublished",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/published",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"published"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTutorialById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllTutorials",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTutorialById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTutorialByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials?title=edi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "edi"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

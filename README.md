@@ -16,7 +16,7 @@ H2 is a lightweight, in-memory database written in Java.
 
 It can be embedded in Java applications or run in client-server mode.
 
-![Example Image](./images/h2-ui.png)
+![h2-ui Image](./images/h2-ui.png)
 
 The h2 database will contain the data:
 

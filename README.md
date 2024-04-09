@@ -64,7 +64,7 @@ To see running redis container (for Windows OS):
 docker ps -a | Select-String "redis"
 ```
 
-![Redis in Docker Image](./images/redisIndocker1.png)
+![Redis in Docker Image](./images/redisIndocker1.PNG)
 
 Once you're in the Redis CLI, you should just use `FLUSHDB` or `FLUSHALL` directly.
 ```bash

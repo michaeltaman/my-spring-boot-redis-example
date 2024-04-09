@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "getAllTutorials",
+			"name": "getAllTutorials/getTutorialByTitle",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -25,7 +25,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tutorials",
+					"raw": "http://localhost:8080/api/tutorials?tutorial=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -34,6 +34,12 @@
 					"path": [
 						"api",
 						"tutorials"
+					],
+					"query": [
+						{
+							"key": "tutorial",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -87,6 +93,27 @@
 						"api",
 						"tutorials",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRandomTutorial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorial/random",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorial",
+						"random"
 					]
 				}
 			},
@@ -171,8 +198,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tutorial Title 491\",\r\n    \"description\": \"Tutorial Description 491\",\r\n    \"published\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/api/tutorials/2",
+					"raw": "http://localhost:8080/api/tutorials/491",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -181,7 +217,7 @@
 					"path": [
 						"api",
 						"tutorials",
-						"2"
+						"491"
 					]
 				}
 			},
@@ -208,6 +244,27 @@
 							"key": "title",
 							"value": "edi"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "init-data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tutorials/init-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tutorials",
+						"init-data"
 					]
 				}
 			},

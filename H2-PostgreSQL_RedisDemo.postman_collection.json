@@ -25,7 +25,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tutorials?tutorial=2",
+					"raw": "http://localhost:8080/api/tutorials?tutorial=Tutorial Title",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -38,7 +38,7 @@
 					"query": [
 						{
 							"key": "tutorial",
-							"value": "2"
+							"value": "Tutorial Title"
 						}
 					]
 				}

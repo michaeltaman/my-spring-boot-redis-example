@@ -3,6 +3,7 @@ package com.example.spring.redis.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,7 +47,7 @@ public class TutorialController {
       }
   }
 
- @GetMapping("/tutorials")
+  @GetMapping("/tutorials")
   public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
     try {
       List<Tutorial> tutorials = new ArrayList<Tutorial>();
@@ -83,12 +84,28 @@ public class TutorialController {
   }
 
 
+  @GetMapping("/tutorial/random")
+  public ResponseEntity<Tutorial> getRandomTutorial() {
+    long count = tutorialIds.size();
+    int index = (int) new Random().nextLong(1, count);
+    Long id = tutorialIds.get(index);
+
+    Optional<Tutorial> tutorialData = tutorialService.findById(id);
+
+    if (tutorialData.isPresent()) {
+      return new ResponseEntity<>(tutorialData.get(), HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
+
 
   @PostMapping("/tutorials/init-data")
   public ResponseEntity<List<Tutorial>> createTutorials() {
       try {
+          long start = tutorialIds.size() + 50; //50 is guaranteed gap to avoid duplicate id
           List<Tutorial> tutorials = new ArrayList<>();
-          for (int i = 0; i < 30; i++) {
+          for (long i = start; i < start + 30; i++) {
               String title = "Tutorial " + (i + 1);
               String description = "Description for tutorial " + (i + 1);
               Tutorial _tutorial = tutorialService.save(new Tutorial(title, description, false));
@@ -128,7 +145,6 @@ public class TutorialController {
     }
   }
 
-  // Rest of your methods...
 
   @DeleteMapping("/tutorials/{id}")
   public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
@@ -150,7 +166,6 @@ public class TutorialController {
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
   }
 
   @GetMapping("/tutorials/published")

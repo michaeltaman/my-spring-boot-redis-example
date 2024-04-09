@@ -59,6 +59,12 @@ docker start redis-stack
 docker exec -it redis-stack redis-cli
 ```
 
+To see running redis container (for Windows OS):
+```bash
+docker ps -a | Select-String "redis"
+```
+
+![Postman Image](./images/redisIndocker1.png)
 
 Once you're in the Redis CLI, you should just use `FLUSHDB` or `FLUSHALL` directly.
 ```bash
@@ -128,3 +134,6 @@ Open the `settings.json` file in VS Code, follow these steps:
 4. **VS Code needs to be reloaded**: Try reloading VS Code. You can do this by pressing `Ctrl+Shift+P` to open the Command Palette, typing <span style="background-color: yellow; color:black">"Reload Window"</span>, and selecting the "Developer: Reload Window" command.
 
 ![Debugging Image](./images/debugging1.png)
+
+## Postmen (Performance) runner test.
+![Postman Image](./images/postman1.png)
